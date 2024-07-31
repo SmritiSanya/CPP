@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
 
-bool isPresent(int arr[][4], int key,int i, int j){
-    for(int i=0;i<3;i++){
-        for(int j=0;j<4;j++){
+bool isPresent(int arr[][4], int key,int row, int col){
+    for(int i=0;i<row;i++){
+        for(int j=0;j<col;j++){
             if(arr[i][j]==key){
                 return 1;
             }
