@@ -21,7 +21,9 @@ int countPrime(int n){
 }
 
 int main(){
-    int n=25;
-    int ans=countPrime(n);
-    cout<<ans;
+
+    //prime number
+    //int n=25;
+    //int ans=countPrime(n);
+    //cout<<ans;
 }
