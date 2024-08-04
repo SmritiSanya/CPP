@@ -3,9 +3,9 @@ using namespace std;
 void update(int **p2){
     //p2=p2+1; //nothing changes
 
-    *p2=*p2+1;
+    //*p2=*p2+1;//change in the address of p
 
-    //**p2=**p2+1;
+     **p2=**p2 +1;
 }
 int main(){
 
