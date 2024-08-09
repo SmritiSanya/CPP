@@ -1,1 +1,1 @@
-arr+1
+izeof(arr) / sizeof(arr[0])

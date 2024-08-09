@@ -1,41 +1,31 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
 using namespace std;
+vector<int> constructNewArray(vector<int> arr) {
+    vector<int> new_arr;
+    int n=arr.size();
+    int start = 0;
+    int end = n - 1;
+    
 
-int compress(vector <char>& chars){
-    //Step 1: Initialization
-    int n=chars.size();
-    int index=0;
-
-    //Step 2: Traverse and count repeats
-    for(int i=0;i<n;){
-        char current_char=chars[i];
-        int count=0;
-
-        while(i<n && chars[i]==current_char ){
-            i++;
-            count++;
-        }
-
-        chars[index++]=current_char;
-
-        if(count>1){
-            string count_str=to_string(count);
-            for(char c: count_str){
-                char[index++]=c;
-            }
-        }
+    while (start <= end) {
+        new_arr.push_back(arr[start]);
+        new_arr.push_back(arr[end]);
+        start++;
+        end--;
     }
-    return index;
+
+    return new_arr;
 }
 
 int main() {
-    vector<char> chars = {'a', 'a', 'b', 'b', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'};
-    int new_length = compress(chars);
-    cout << "New length: " << new_length << endl;
-    cout << "Compressed chars: ";
-    for (int i = 0; i < new_length; ++i) {
-        cout << chars[i];
+    std::vector<int> original_array = {0,4,3,2,1};
+    std::vector<int> new_array = constructNewArray(original_array);
+
+    for (int num : new_array) {
+        std::cout << num << " ";
     }
-    cout << endl;
+    // Output: 1 8 2 7 3 6 4 5
+
     return 0;
 }

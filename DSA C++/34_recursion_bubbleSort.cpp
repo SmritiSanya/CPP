@@ -3,16 +3,19 @@ using namespace std;
 
 void BubbleSort(int arr[], int size)
 {
-    for(int i=0;i<size-1;i++)//we do size-1 to avoid redundant comparisons at the end
-    {
-        //Round 1 to n-1
-        for(int j=0;j<size-i-1;j++)//to avoid redundant comparisons
-       {
-            if(arr[j]>arr[j+1]){
-                swap(arr[j], arr[j+1]);
-            }
-       } 
+    //base case
+    if(size==1|| size==0){
+        return;
     }
+
+    //ek case solve karlia - largest element ko end me rakh dia
+    for(int i=0;i<size-1;i++){
+        if(arr[i]>arr[i+1]){
+            swap(arr[i], arr[i+1]);
+        }
+    } 
+    BubbleSort(arr,size-1);
+    
 }
 
 void printArray(int arr[], int size)
